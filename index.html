@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <!-- 데이터 선언적 렌더링 -->
+        <div id="app">
+            {{ message }}
+        </div>
+
+        <!-- 엘리먼트 속성 바인딩 -->
+        <div id="app2">
+          <span v-bind:title="message">
+            Hover your mouse over me for a few seconds to see my dynamically bound here!
+          </span>
+        </div>
+        
+        <!-- 조건문 -->
+        <div id="app3">
+          <p v-if="seen">Now you see me</p>
+        </div>
+
+        <!-- 반복문 -->
+        <div id="app4">
+          <ol>
+            <li v-for="todo in todos">
+              {{ todo.text }}
+            </li>
+          </ol>
+        </div>
+
+        <!-- Event 처리 -->
+        <!-- 클릭 -->
+        <div id="app5">
+          <p>{{ message }}</p>
+          <button v-on:click="reverseMessage">Reverse Message</button>
+        </div>
+
+        <!-- 입력(Vue의 data가 변경됨) -->
+        <div id="app6">
+          <p>{{ message }}</p>
+          <input v-model="message">
+        </div>
+
+        <!-- Component 만들어 적용하기 -->
+        <div id="app7">
+          <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+          </ol>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
