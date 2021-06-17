@@ -7,6 +7,11 @@
             <p>{{ foo }}</p>
             <button v-on:click="foo = 'baz'">Change it</button>
         </div>
+
+        <div id="vm2">
+            <p>{{ b }}</p>
+            <input type="text" v-model="b">
+        </div>
         <script src="data.js"></script>
     </body>
 </html>

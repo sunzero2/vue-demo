@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <section id="vm1">
+            <!-- Mustache 구문(이중 중괄호) 텍스트 보간법 -->
+            <p>msg: {{ msg }}</p>
+
+            <!-- v-once는 업데이트가 불가능한 일회성 보간법 -->
+            <p v-once>처음 값: {{ msg }}</p>
+            <input type="text" v-model="msg">
+
+            <hr>
+            <!-- mustache 구문은 텍스트로 처리하므로 태그를 넣고 싶으면 v-html 사용 -->
+            <p>Using mustaches: {{ rawHtml }}</p>
+            <!-- v-html을 사용한 span은 무시 -> p로 대체됨-->
+            <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+        </section>
+        <script src="template.js"></script>
+    </body>
+</html>
